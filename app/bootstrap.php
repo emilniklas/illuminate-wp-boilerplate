@@ -18,6 +18,15 @@ $container->bind(
     App\WordPress\WordPressPostRepository::class
 );
 
+$blade = new Philo\Blade\Blade(
+    __DIR__.'/views',
+    __DIR__.'/../.blade-cache'
+);
+$container->instance(
+    Illuminate\Contracts\View\Factory::class,
+    $blade->view()
+);
+
 require(__DIR__.'/Http/routes.php');
 
 $request = Illuminate\Http\Request::capture();
