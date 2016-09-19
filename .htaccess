@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteCond wordpress%{REQUEST_URI} -f
+RewriteRule ^(.*)$ /wordpress/$1 [END]
+
+RewriteRule ^ public/index.php [L]
