@@ -20,3 +20,5 @@ RUN sed -i 's/database_name_here/wp/' wp-config.php
 RUN sed -i 's/username_here/user/' wp-config.php
 RUN sed -i 's/password_here/password/' wp-config.php
 RUN sed -i 's/localhost/illuminate-wp-boilerplate-db/' wp-config.php
+
+EXPOSE 80
