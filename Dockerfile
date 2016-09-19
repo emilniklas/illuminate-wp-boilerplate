@@ -16,7 +16,7 @@ RUN composer install --prefer-source --no-interaction
 
 WORKDIR /var/www/html/wordpress
 RUN cp wp-config-sample.php wp-config.php
-RUN sed -i 's/database_name_here/illuminate-wp-boilerplate/' wp-config.php
-RUN sed -i 's/username_here/root/' wp-config.php
-RUN sed -i 's/password_here//' wp-config.php
-RUN sed -i 's/localhost/mysql/' wp-config.php
+RUN sed -i 's/database_name_here/wp/' wp-config.php
+RUN sed -i 's/username_here/user/' wp-config.php
+RUN sed -i 's/password_here/password/' wp-config.php
+RUN sed -i 's/localhost/illuminate-wp-boilerplate-db/' wp-config.php
