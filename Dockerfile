@@ -1,9 +1,12 @@
-FROM php:7.1-apache
+FROM php:7.0-apache
 
 COPY . /var/www/html
 WORKDIR /var/www/html
 
-RUN apt-get update && apt-get install git -y
+RUN docker-php-ext-install -j$(nproc) iconv pdo pdo_mysql mysqli mbstring
+
+RUN apt-get update && apt-get install git zip unzip -y
+
 RUN a2enmod rewrite
 
 RUN curl \
